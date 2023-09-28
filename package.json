@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "prod": "ng build --prod",
+    "postinstall": "node scripts/service-worker-workaround.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
