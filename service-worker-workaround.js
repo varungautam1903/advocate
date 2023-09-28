@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const ngswWorkerFilePath = path.join(__dirname, '..', 'node_modules', '@angular', 'service-worker', 'ngsw-worker.js');
+const ngswWorkerFilePath = path.join(__dirname, 'node_modules', '@angular', 'service-worker', 'ngsw-worker.js');
 let ngswWorkerFile = fs.readFileSync(ngswWorkerFilePath).toString();
 const regExps = [
   [/await cache\.(match|put)\((.*)\)/gm, 'await cache.$1($2).catch((e) => console.log(e))'],
