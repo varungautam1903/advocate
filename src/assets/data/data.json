@@ -1,0 +1,16 @@
+{
+    "result": [
+        {
+            "caseNo": 1,
+            "caseName": "Rape Case",
+            "judgeName": "Pankaj tripahthi",
+            "court": "Mohali"
+        },
+        {
+            "caseNo": 2,
+            "caseName": "Murder Case",
+            "judgeName": "Pankaj tripahthi",
+            "court": "Mohali"
+        }
+    ]
+}
