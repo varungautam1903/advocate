@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 import { filter, map } from 'rxjs';
 import { Platform } from '@angular/cdk/platform';
+import { User } from './models/user';
+import { AuthenticationService } from './services/authentication.service';
+import { Role } from './models/role';
 
 @Component({
   selector: 'app-root',
@@ -14,9 +17,12 @@ export class AppComponent implements OnInit {
   isOnline: boolean;
   modalVersion: boolean;
   modalPwaEvent: any;
-  modalPwaPlatform: string|undefined;
+  modalPwaPlatform: string | undefined;
 
-  constructor(private platform: Platform, private swUpdate: SwUpdate) {
+  user?: User | null;
+
+  constructor(private platform: Platform, private swUpdate: SwUpdate, private authenticationService: AuthenticationService) {
+    this.authenticationService.user.subscribe(x => this.user = x);
     this.isOnline = false;
     this.modalVersion = false;
   }
@@ -24,7 +30,7 @@ export class AppComponent implements OnInit {
   public ngOnInit(): void {
     this.updateOnlineStatus();
 
-    window.addEventListener('online',  this.updateOnlineStatus.bind(this));
+    window.addEventListener('online', this.updateOnlineStatus.bind(this));
     window.addEventListener('offline', this.updateOnlineStatus.bind(this));
 
     if (this.swUpdate.isEnabled) {
@@ -38,6 +44,14 @@ export class AppComponent implements OnInit {
     }
 
     this.loadModalPwa();
+  }
+
+  get isAdmin() {
+    return this.user?.role === Role.Admin;
+  }
+
+  logout() {
+    this.authenticationService.logout();
   }
 
   private updateOnlineStatus(): void {
