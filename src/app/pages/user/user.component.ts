@@ -13,6 +13,7 @@ export class UserComponent {
 
   userForm = new FormGroup({
     firstName: new FormControl(''),
+    middleName: new FormControl(''),
     lastName: new FormControl(''),
   });
 

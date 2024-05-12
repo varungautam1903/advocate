@@ -24,7 +24,6 @@ export class UserDetailComponent {
 
   getUser(id: any) {
     this.userService.getUsers().subscribe((response: any) => {
-      debugger;
       this.user = response.result.find((x: any) => x.id == id) || 0;
     })
   }

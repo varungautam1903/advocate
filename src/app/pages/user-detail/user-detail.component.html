@@ -1,4 +1,5 @@
 <div class="card mt-4">
+    <button type="button" class="btn btn-primary w-25" routerLink="../">Back</button>
     <h4 class="card-header">User Detail</h4>
     <div class="card-body">
 
@@ -6,6 +7,5 @@
         <div>{{user.dob}}</div>
         <div>{{user.address}}</div>
         <div>{{user.tel}}</div>
-        <div><a [routerLink]="['/user', user.id]">Details</a></div>
     </div>
 </div>
