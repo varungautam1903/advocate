@@ -2,9 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './helper/auth.guard';
 import { Role } from './models/role';
-import { AdminComponent } from './pages/admin/admin.component';
-import { HomeComponent } from './pages/home/home.component';
-import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   {
@@ -14,15 +11,22 @@ const routes: Routes = [
     )
   },
   {
-    path: 'cases',
-    loadChildren: () => import('./pages/cases/cases.module').then(
-      mod => mod.CasesModule
+    path: 'user',
+    loadChildren: () => import('./pages/user/user.module').then(
+      mod => mod.UserModule
     )
   },
   {
     path: '',
     loadChildren: () => import('./pages/home/home.module').then(
       mod => mod.HomeModule
+    ),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then(
+      mod => mod.ProfileModule
     ),
     canActivate: [AuthGuard]
   },

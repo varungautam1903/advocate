@@ -4,14 +4,18 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class CasesService {
+export class UserService {
 
-  url: string = '/assets/data/data.json';
+  url: string = '/assets/data/user.json';
 
   constructor(private http: HttpClient) { }
 
-  getCases() {
+  getUsers() {
     return this.http.get(this.url);
+  }
+
+  createUser(req: any) {
+    return this.http.post(this.url, req);
   }
 
 }

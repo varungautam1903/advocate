@@ -1,0 +1,26 @@
+<div class="card mt-4">
+  <h4 class="card-header">Personal Details</h4>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Dob</th>
+          <th scope="col">Address</th>
+          <th scope="col">Telephone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userData; let i = index">
+          <th scope="row">{{i + 1}}</th>
+          <td>{{user.firstName}} {{user.middleName}} {{user.lastName}}</td>
+          <td>{{user.dob}}</td>
+          <td>{{user.address}}</td>
+          <td>{{user.tel}}</td>
+          <td>{{user.tel}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

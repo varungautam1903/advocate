@@ -1,0 +1,45 @@
+<div class="card mt-4">
+    <h4 class="card-header">Add User</h4>
+    <div>
+        <form class="m-4" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="firstName">FirstName</label>
+                <input type="text" class="form-control" id="firstName"
+                    placeholder="Enter FirstName" formControlName="firstName" />
+            </div>
+            <div class="form-group">
+                <label for="lastName">LastName</label>
+                <input type="text" class="form-control" id="lastName" placeholder="Enter LastName" formControlName="lastName" />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+<div class="card mt-4">
+    <h4 class="card-header">All Users</h4>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Dob</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Telephone</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of userList; let i = index">
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{user.firstName}} {{user.middleName}} {{user.lastName}}</td>
+                    <td>{{user.dob}}</td>
+                    <td>{{user.address}}</td>
+                    <td>{{user.tel}}</td>
+                    <td><a [routerLink]="['/user', user.id]">Details</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

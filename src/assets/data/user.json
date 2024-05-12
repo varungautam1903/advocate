@@ -1,0 +1,22 @@
+{
+    "result": [
+        {
+            "id": 1,
+            "firstName": "Chandra",
+            "middleName": "",
+            "lastName": "Joshi",
+            "dob": "01 Jan 2024",
+            "tel": "1234567890",
+            "address": "Snowshill garden"
+        },
+        {
+            "id": 2,
+            "firstName": "Pankaj",
+            "middleName": "",
+            "lastName": "Joshi",
+            "dob": "01 Feb 2024",
+            "tel": "9876543210",
+            "address": "Birmingham"
+        }
+    ]
+}

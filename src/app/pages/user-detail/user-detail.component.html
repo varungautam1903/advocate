@@ -1,0 +1,11 @@
+<div class="card mt-4">
+    <h4 class="card-header">User Detail</h4>
+    <div class="card-body">
+
+        <div>{{user.firstName}} {{user.middleName}} {{user.lastName}}</div>
+        <div>{{user.dob}}</div>
+        <div>{{user.address}}</div>
+        <div>{{user.tel}}</div>
+        <div><a [routerLink]="['/user', user.id]">Details</a></div>
+    </div>
+</div>
