@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/users.service';
 
 @Component({
@@ -12,9 +12,17 @@ export class UserComponent {
   userList: any = [];
 
   userForm = new FormGroup({
-    firstName: new FormControl(''),
-    middleName: new FormControl(''),
-    lastName: new FormControl(''),
+    firstName: new FormControl('', [Validators.required]),
+    middleName: new FormControl('', [Validators.required]),
+    lastName: new FormControl('', [Validators.required]),
+    dob: new FormControl('', [Validators.required]),
+    address: new FormControl('', [Validators.required]),
+    tel: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required]),
+    travelNo: new FormControl('', [Validators.required]),
+    medicalNo: new FormControl('', [Validators.required]),
+    passportNo: new FormControl('', [Validators.required]),
+    passporyExpiry: new FormControl('', [Validators.required])
   });
 
   constructor(private userService: UserService) {
