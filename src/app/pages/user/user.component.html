@@ -1,121 +1,118 @@
-<!-- <div class="card mt-4">
-    <h4 class="card-header">Add User</h4>
-    <div>
-        <form class="m-4" [formGroup]="userForm" (ngSubmit)="onSubmit()">
-            <div class="form-group">
-                <label for="firstName">FirstName</label>
-                <input type="text" class="form-control" id="firstName" placeholder="Enter FirstName"
-                    formControlName="firstName" />
-            </div>
-            <div class="form-group">
-                <label for="lastName">LastName</label>
-                <input type="text" class="form-control" id="lastName" placeholder="Enter LastName"
-                    formControlName="lastName" />
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
-</div> -->
-
 <div class="container">
-    <form class="card" [formGroup]="userForm" (ngSubmit)="onSubmit()">
-        <h4 class="card-header">Add User</h4>
-        <div class="row m-2">
-            <div class="col-sm">
-                <div class="form-group">
-                <!-- <label for="firstName">First Name</label> -->
-                <input type="text" class="form-control" id="firstName" placeholder="FirstName"
-                    formControlName="firstName" />
-            </div>
-            </div>
-            <div class="col-sm">
-                <div class="form-group">
-                    <!-- <label for="lastName">Middle Name</label> -->
-                    <input type="text" class="form-control" id="lastName" placeholder="MiddleName"
-                        formControlName="middleName" />
-                </div>
-            </div>
-            <div class="col-sm">
-                <div class="form-group">
-                    <!-- <label for="lastName">Last Name</label> -->
-                    <input type="text" class="form-control" id="lastName" placeholder="LastName"
-                        formControlName="lastName" />
-                </div>
-            </div>
-        </div>
-        
-        <div class="row m-2">
-            <div class="col-sm">
-                <div class="form-group">
-                <!-- <label for="firstName">Date of Birth</label> -->
-                <input type="text" class="form-control" id="dob" placeholder="Date of Birth"
-                    formControlName="dob" />
-            </div>
-            </div>
-            <div class="col-sm">
-                <div class="form-group">
-                    <!-- <label for="lastName">Address</label> -->
-                    <input type="text" class="form-control" id="address" placeholder="Address"
-                        formControlName="address" />
-                </div>
-            </div>
-            <div class="col-sm">
-                <div class="form-group">
-                    <!-- <label for="lastName">Tel</label> -->
-                    <input type="text" class="form-control" id="tel" placeholder="Tel"
-                        formControlName="tel" />
-                </div>
-            </div>
-            <div class="col-sm">
-                <div class="form-group">
-                    <!-- <label for="lastName">Email Address</label> -->
-                    <input type="text" class="form-control" id="email" placeholder="Email Address"
-                        formControlName="email" />
-                </div>
-            </div>
-        </div>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    <h4 class="card-header">Add User</h4>
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <form class="card" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                        <!-- <h4 class="card-header">Add User</h4> -->
+                        <div class="row m-2">
+                            <div class="col-sm">
+                                <div class="form-group">
+                                    <!-- <label for="firstName">First Name</label> -->
+                                    <input type="text" class="form-control" id="firstName" placeholder="FirstName"
+                                        formControlName="firstName" />
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="form-group">
+                                    <!-- <label for="lastName">Middle Name</label> -->
+                                    <input type="text" class="form-control" id="lastName" placeholder="MiddleName"
+                                        formControlName="middleName" />
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="form-group">
+                                    <!-- <label for="lastName">Last Name</label> -->
+                                    <input type="text" class="form-control" id="lastName" placeholder="LastName"
+                                        formControlName="lastName" />
+                                </div>
+                            </div>
+                        </div>
 
-        <div class="row m-2">
-            <h6>Medical Details</h6>
-            <div class="col-sm">
-                <div class="form-group">
-                <!-- <label for="firstName">Travel Policy Number</label> -->
-                <input type="text" class="form-control" id="travelNo" placeholder="Travel Policy Number"
-                    formControlName="travelNo" />
-            </div>
-            </div>
-            <div class="col-sm">
-                <div class="form-group">
-                    <!-- <label for="lastName">Medical Policy Number</label> -->
-                    <input type="text" class="form-control" id="medicalNo" placeholder="Medical Policy Number"
-                        formControlName="medicalNo" />
+                        <div class="row m-2">
+                            <div class="col-sm">
+                                <div class="form-group">
+                                    <!-- <label for="firstName">Date of Birth</label> -->
+                                    <input type="text" class="form-control" id="dob" placeholder="Date of Birth"
+                                        formControlName="dob" />
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="form-group">
+                                    <!-- <label for="lastName">Address</label> -->
+                                    <input type="text" class="form-control" id="address" placeholder="Address"
+                                        formControlName="address" />
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="form-group">
+                                    <!-- <label for="lastName">Tel</label> -->
+                                    <input type="text" class="form-control" id="tel" placeholder="Tel"
+                                        formControlName="tel" />
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="form-group">
+                                    <!-- <label for="lastName">Email Address</label> -->
+                                    <input type="text" class="form-control" id="email" placeholder="Email Address"
+                                        formControlName="email" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row m-2">
+                            <h6>Medical Details</h6>
+                            <div class="col-sm">
+                                <div class="form-group">
+                                    <!-- <label for="firstName">Travel Policy Number</label> -->
+                                    <input type="text" class="form-control" id="travelNo"
+                                        placeholder="Travel Policy Number" formControlName="travelNo" />
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="form-group">
+                                    <!-- <label for="lastName">Medical Policy Number</label> -->
+                                    <input type="text" class="form-control" id="medicalNo"
+                                        placeholder="Medical Policy Number" formControlName="medicalNo" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row m-2">
+                            <h6>Passport Details</h6>
+                            <div class="col-sm">
+                                <div class="form-group">
+                                    <!-- <label for="firstName">Passport Number</label> -->
+                                    <input type="text" class="form-control" id="firstName" placeholder="Passport Number"
+                                        formControlName="passportNo" />
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="form-group">
+                                    <!-- <label for="lastName">Passport Expiry</label> -->
+                                    <input type="text" class="form-control" id="passporyExpiry"
+                                        placeholder="Passport Expiry" formControlName="passporyExpiry" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center m-4">
+                            <button type="submit" class="btn btn-primary w-25">Submit</button>
+                        </div>
+
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="row m-2">
-            <h6>Passport Details</h6>
-            <div class="col-sm">
-                <div class="form-group">
-                <!-- <label for="firstName">Passport Number</label> -->
-                <input type="text" class="form-control" id="firstName" placeholder="Passport Number"
-                    formControlName="passportNo" />
-            </div>
-            </div>
-            <div class="col-sm">
-                <div class="form-group">
-                    <!-- <label for="lastName">Passport Expiry</label> -->
-                    <input type="text" class="form-control" id="passporyExpiry" placeholder="Passport Expiry"
-                        formControlName="passporyExpiry" />
-                </div>
-            </div>
-        </div>
-
-        <div class="text-center m-4">
-            <button type="submit" class="btn btn-primary w-25">Submit</button>
-        </div>
-
-    </form>
 </div>
 
 <div class="card mt-4">

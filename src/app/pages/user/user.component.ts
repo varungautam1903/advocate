@@ -26,12 +26,18 @@ export class UserComponent {
   });
 
   constructor(private userService: UserService) {
-    this.getUserList();
+    let list = localStorage.getItem("userList") || undefined;
+    if (list != undefined) {
+      this.userList = JSON.parse(list)
+    } else {
+      this.getUserList();
+    }
   }
 
   getUserList() {
     this.userService.getUsers().subscribe((response: any) => {
       this.userList = response.result;
+      localStorage.setItem("userList", JSON.stringify(this.userList));
     })
   }
 
