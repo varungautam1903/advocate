@@ -43,7 +43,6 @@ export class UserComponent {
   }
 
   onSubmit() {
-    console.log("test", this.userForm.value)
     if (this.userForm.valid) {
       this.userForm.controls['id'].setValue(this.getRandom());
       this.userList.push(this.userForm.value);
