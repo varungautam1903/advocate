@@ -9,11 +9,12 @@ import { UserService } from 'src/app/services/users.service';
 })
 export class UserComponent {
 
-  userList: any = [];
+  userList: any[] = [];
 
   userForm = new FormGroup({
+    id: new FormControl(''),
     firstName: new FormControl('', [Validators.required]),
-    middleName: new FormControl('', [Validators.required]),
+    middleName: new FormControl(''),
     lastName: new FormControl('', [Validators.required]),
     dob: new FormControl('', [Validators.required]),
     address: new FormControl('', [Validators.required]),
@@ -43,9 +44,21 @@ export class UserComponent {
 
   onSubmit() {
     console.log("test", this.userForm.value)
-    this.userService.createUser(this.userForm.value).subscribe((response: any) => {
-      debugger;
-    })
+    if (this.userForm.valid) {
+      this.userForm.controls['id'].setValue(this.getRandom());
+      this.userList.push(this.userForm.value);
+      localStorage.setItem("userList", JSON.stringify(this.userList));
+      this.userForm.reset();
+    }
+  }
+
+  getRandom() {
+    return btoa(Math.random().toString()).substring(0,12)
+  }
+
+  deleteUser(id: any) {
+    this.userList = this.userList.filter(x => x.id != id);
+    localStorage.setItem("userList", JSON.stringify(this.userList));
   }
 
 }

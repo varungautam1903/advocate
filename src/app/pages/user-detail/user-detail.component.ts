@@ -23,9 +23,17 @@ export class UserDetailComponent {
   }
 
   getUser(id: any) {
-    this.userService.getUsers().subscribe((response: any) => {
-      this.user = response.result.find((x: any) => x.id == id) || 0;
-    })
+    debugger;
+    let list = localStorage.getItem("userList") || undefined;
+    if (list != undefined) {
+      let userList = JSON.parse(list)
+      this.user = userList.find((x: any) => x.id == id) || 0;
+    } else {
+      this.userService.getUsers().subscribe((response: any) => {
+        this.user = response.result.find((x: any) => x.id == id) || 0;
+      })
+    }
+    
   }
 
 }

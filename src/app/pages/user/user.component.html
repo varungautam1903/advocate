@@ -134,7 +134,10 @@
                     <td>{{user.firstName}} {{user.middleName}} {{user.lastName}}</td>
                     <td>{{user.address}}</td>
                     <td>{{user.tel}}</td>
-                    <td><a [routerLink]="['/user', user.id]">Details</a></td>
+                    <td>
+                        <a (click)="deleteUser(user.id)" class="btn">Remove</a>
+                        <a [routerLink]="['/user', user.id]">Details</a>
+                    </td>
                 </tr>
             </tbody>
         </table>
